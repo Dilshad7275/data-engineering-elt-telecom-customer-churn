@@ -55,6 +55,8 @@ customer-churn-elt-pipeline/
 │-- requirements.txt      # Python dependencies
 │-- README.md             # Project documentation
 ```
+## Customer Churn Metrics Dashboard Live URL
+http://localhost:3000/public/dashboard/1367d86c-c839-44c5-92e7-646d0e901e5d
 
 ## 👤 Author
 Dilshad Ahmed – Data Engineer & (Python, Snowflake, SQL, Power BI) Developer
