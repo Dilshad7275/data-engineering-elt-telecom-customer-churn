@@ -56,7 +56,7 @@ customer-churn-elt-pipeline/
 │-- README.md             # Project documentation
 ```
 ## Customer Churn Metrics Dashboard Live URL
-http://localhost:3000/public/dashboard/1367d86c-c839-44c5-92e7-646d0e901e5d
+http://localhost:3000/public/dashboard/247eaa33-30bd-4fc0-b4a8-6b95a85ea261
 
 ## 🚀 How to Run the Project Locally
 
