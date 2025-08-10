@@ -58,5 +58,44 @@ customer-churn-elt-pipeline/
 ## Customer Churn Metrics Dashboard Live URL
 http://localhost:3000/public/dashboard/1367d86c-c839-44c5-92e7-646d0e901e5d
 
+## 🚀 How to Run the Project Locally
+
+### Prerequisites
+- Install **Docker** and **Docker Compose** on your machine.  
+  [Docker Installation Guide](https://docs.docker.com/get-docker/)  
+- (Optional) Have **Python 3.8+** installed if you want to run scripts locally.
+
+### Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Dilshad7275/data-engineering-elt-telecom-customer-churn.git
+   cd data-engineering-elt-telecom-customer-churn
+2. Download the dataset
+	- **Download the dataset from Kaggle Telecom Customer Churn Dataset and place the CSV file inside the data/ folder.**
+
+3. Start the containers using Docker Compose
+	```
+    bash
+	docker-compose up -d
+    ```
+      This will start:
+    	- **PostgreSQL database (staging and production schemas)**
+    	- **Apache Airflow for orchestration**
+    	- **Metabase for reporting dashboard**
+
+4. Access the services
+   - **Airflow UI: http://localhost:8080
+		- **Default credentials:**
+		- **Username: admin**
+		- **Password: admin*
+   - **Metabase UI: http://localhost:3000**
+
+5. Run the ELT pipeline
+	- **The Airflow DAG is scheduled to run every 2 hours by default. You can also trigger it manually from the Airflow UI.**
+
+6. View reports in Metabase
+	- **Metabase is connected to the processed PostgreSQL database and provides a dashboard to explore customer churn analytics.**
+
 ## 👤 Author
 Dilshad Ahmed – Data Engineer & (Python, Snowflake, SQL, Power BI) Developer
