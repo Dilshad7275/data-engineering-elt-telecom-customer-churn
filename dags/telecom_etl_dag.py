@@ -17,7 +17,7 @@ default_args = {
 dag = DAG(
     "telecom_etl_dag",
     default_args=default_args,
-    schedule_interval='@daily',
+    schedule_interval=''0 */1 * * *'',
     catchup=False
 )
 
@@ -27,12 +27,5 @@ task1 = PythonOperator(
     dag=dag,
 )
 
-task2 = EmailOperator(
-    task_id='mail_task',
-    to='dilshadahmed.de@gmail.com',
-    subject='Airflow Email Operator example',
-    html_content='<p>This is a test email sent from Airflow.</p>',
-    dag=dag,
-)
 
-task1 >> task2
+task1 
