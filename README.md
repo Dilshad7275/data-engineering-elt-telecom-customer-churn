@@ -72,7 +72,7 @@ http://localhost:3000/public/dashboard/1367d86c-c839-44c5-92e7-646d0e901e5d
    git clone https://github.com/Dilshad7275/data-engineering-elt-telecom-customer-churn.git
    cd data-engineering-elt-telecom-customer-churn
 2. Download the dataset
-	- **Download the dataset from Kaggle Telecom Customer Churn Dataset and place the CSV file inside the data/ folder.**
+	- **Download the dataset from Kaggle Telecom Customer Churn Dataset and place the CSV file inside the data/incoming folder.**
 
 3. Start the containers using Docker Compose
 	```
@@ -85,7 +85,7 @@ http://localhost:3000/public/dashboard/1367d86c-c839-44c5-92e7-646d0e901e5d
     	- **Metabase for reporting dashboard**
 
 4. Access the services
-   - **Airflow UI: http://localhost:8080
+   - **Airflow UI: http://localhost:8080**
 		- **Default credentials:**
 		- **Username: admin**
 		- **Password: admin*
@@ -97,5 +97,11 @@ http://localhost:3000/public/dashboard/1367d86c-c839-44c5-92e7-646d0e901e5d
 6. View reports in Metabase
 	- **Metabase is connected to the processed PostgreSQL database and provides a dashboard to explore customer churn analytics.**
 
+##Notes
+- **Ensure the CSV dataset is correctly placed in the data/incoming folder before running the pipeline.**
+- **Logs and other runtime files are stored in the scripts/logs/ folder for troubleshooting.**
+- **The pipeline handles ingestion, transformation (including missing values and PII anonymization), and loads the processed data for reporting.**	
+
 ## 👤 Author
 Dilshad Ahmed – Data Engineer & (Python, Snowflake, SQL, Power BI) Developer
+
