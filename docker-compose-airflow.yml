@@ -1,0 +1,27 @@
+services:
+  airflow:
+    image: apache/airflow:2.7.1
+    restart: always
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - _PIP_ADDITIONAL_REQUIREMENTS=pandas sqlalchemy psycopg2-binary
+      - AIRFLOW_UID=50000
+      - PG_HOST=postgres_container         # your postgres container name from `docker ps`
+      - PG_PORT=5432
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+      - PG_STAGING_DB=etl_staging_db
+      - PG_PROD_DB=etl_production_db
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+      - ./logs/airflow:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./data/incoming:/opt/airflow/data/incoming
+    ports:
+      - 8080:8080
+    command: >
+      bash -c "
+      airflow db init &&
+      airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com &&
+      airflow scheduler & airflow webserver"
